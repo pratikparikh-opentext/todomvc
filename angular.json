@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todomvcng6": {
+    "workshop-todomvc": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,19 +13,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/todomvcng6",
+            "outputPath": "dist/workshop-todomvc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+			        "src/iw_module_config.json"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/iw_module_stubs.js",
+              "src/iw_module_api.js"
+			      ]
           },
           "configurations": {
             "production": {
@@ -40,28 +44,29 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
+              "aot": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": false
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "todomvcng6:build"
+            "port": 4444,
+            "browserTarget": "workshop-todomvc:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "todomvcng6:build:production"
+              "browserTarget": "workshop-todomvc:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "todomvcng6:build"
+            "browserTarget": "workshop-todomvc:build"
           }
         },
         "test": {
@@ -95,7 +100,7 @@
         }
       }
     },
-    "todomvcng6-e2e": {
+    "workshop-todomvc-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +108,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "todomvcng6:serve"
+            "devServerTarget": "workshop-todomvc:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "todomvcng6:serve:production"
+              "devServerTarget": "workshop-todomvc:serve:production"
             }
           }
         },
@@ -123,5 +128,5 @@
       }
     }
   },
-  "defaultProject": "todomvcng6"
+  "defaultProject": "workshop-todomvc"
 }

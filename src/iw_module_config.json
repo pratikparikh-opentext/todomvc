@@ -1,0 +1,34 @@
+{
+  "states": [
+    {
+      "name": "Properties",
+      "path": "#/properties",
+      "exposed": true,
+      "default": true
+    }
+  ],
+  "properties": [
+    {
+      "id": "todosTitle",
+      "type": "String",
+      "name": "Todo Title",
+      "min": -1,
+      "max": 40,
+      "mask": "regular expression",
+      "exposed": true,
+      "replicatable": false,
+      "value": "My Todo's"
+    },
+    {
+      "id": "todosStorage",
+      "type": "String",
+      "name": "Todo Storage",
+      "min": -1,
+      "max": 40,
+      "mask": "regular expression",
+      "exposed": true,
+      "replicatable": false,
+      "value": "[]"
+    }
+  ]
+}

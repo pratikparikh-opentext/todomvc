@@ -8,7 +8,6 @@ import {TodoComponent} from './todo/todo.component';
 import {TodoService} from './todo.service';
 import {AppComponent} from './app.component';
 
-
 const routes: Routes = [
 	{path: '', component: TodoComponent, pathMatch: 'full'},
 	{path: ':filter', component: TodoComponent}
@@ -25,7 +24,9 @@ const routes: Routes = [
 		AutofocusModule,
 		RouterModule.forRoot(routes, {useHash: true})
 	],
-	providers: [TodoService],
+	providers: [
+		TodoService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

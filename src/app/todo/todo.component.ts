@@ -26,6 +26,7 @@ export class TodoComponent implements OnInit, DoCheck, OnDestroy {
 	completed: number;
 	remaining: number;
 	allCompleted: boolean;
+	todoGreeting: 'String';
 
 
 	constructor(private todoService: TodoService, private route: ActivatedRoute) {
@@ -34,6 +35,8 @@ export class TodoComponent implements OnInit, DoCheck, OnDestroy {
 	// ~ lifecycle
 
 	ngOnInit() {
+		const iw:any = window['iw'];
+		this.todoGreeting = iw.getPropertyValue('todosTitle');
 		this.routeSubscription = this.route.params.subscribe(params => {
 			this.filter = FilterUtil.fromString(params['filter']);
 		});

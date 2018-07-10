@@ -39,3 +39,6 @@ package-lock.json
 # System Files
 .DS_Store
 Thumbs.db
+
+#TeamSite Module API
+src/iw_module_api.js

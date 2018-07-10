@@ -1,6 +1,6 @@
 <section class="todoapp">
 	<header class="header">
-		<h1>todos</h1>
+		<h1 in-context-edit="todosTitle" [innerHTML]="todoGreeting">todos</h1>
 		<input class="new-todo" placeholder="What needs to be done?"
 				 #todo [(ngModel)]="newTodo" (keyup.enter)="create(todo.value)" autofocus>
 	</header>
