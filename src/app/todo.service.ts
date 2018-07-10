@@ -6,7 +6,7 @@ import {Todo} from './todo/todo.model';
 @Injectable()
 export class TodoService {
 
-	private static STORAGE_KEY = 'todosStorage';
+	private static STORAGE_KEY = 'todosStorage6';
 	private lastInsertId = 0;
 	private todos: Todo[] = [];
 
@@ -74,7 +74,7 @@ export class TodoService {
 
 	private fetch() {
 		const iw:any = window['iw'];
-		const persistedValue = iw.getPropertyValue(TodoService.STORAGE_KEY);
+		const persistedValue = localStorage.getItem(TodoService.STORAGE_KEY);
 		try {
 			this.todos = JSON.parse(persistedValue || '[]');
 		} catch (ignore) {
@@ -83,7 +83,7 @@ export class TodoService {
 	}
 
 	private save(): void {
-		//localStorage.setItem(TodoService.STORAGE_KEY, JSON.stringify(this.todos));
+		localStorage.setItem(TodoService.STORAGE_KEY, JSON.stringify(this.todos));
 		const iw:any = window['iw'];
 		const persistedValue = iw.setPropertyValue(TodoService.STORAGE_KEY,JSON.stringify(this.todos));
 	}
